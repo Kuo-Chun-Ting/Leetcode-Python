@@ -12,12 +12,11 @@ class Solution(object):
         total = None
         current = None
         
-        
-        while curr1 != None or curr2 != None or carry != 0:
+        while curr1 != None or curr2 != None:
             sum = 0
             sum += carry if carry != 0 else 0
             sum += curr1.val if curr1 != None else 0
-            sum += curr2.val if curr2 != None else 0
+            sum += curr2.val if curr2 != None else 0       
             
             if sum >= 10:
                 sum -= 10
@@ -34,17 +33,16 @@ class Solution(object):
                 
             curr1 = curr1.next if curr1 != None else None
             curr2 = curr2.next if curr2 != None else None
-         
+        
+        if carry > 0:
+            current.next = ListNode(carry)
         return total   
     
     
-l1 = ListNode(2)
-l1.next = ListNode(4)
-l1.next.next = ListNode(3)
+l1 = ListNode(1)
 
-l2 = ListNode(5)
-l2.next = ListNode(6)
-l2.next.next = ListNode(4)
+l2 = ListNode(9)
+l2.next = ListNode(9)
 
 s = Solution()
 total = s.addTwoNumbers(l1,l2)
