@@ -17,43 +17,36 @@ class Solution:
             data.append(curr.val)
             curr = curr.next
         print(data)
+        print()
         
-        self.quickSort(data)
+        self.quick＿sort(data, 0, len(data) - 1)
         
-    def quickSort(self, data: []):
-        pivot = data[0]
-        i = 1
-        j = len(data) - 1
-        left = None
-        right = None
+    def quick＿sort(self, data: [], i: int, j: int):
+        if i == j:
+            return data
+        pivot = data[i]
+        i += 1
         while True:
-            
-            if left is None:
-                if data[i] < pivot:
-                    i += 1
-                else:
-                    left = data[i]
-                    
-            if right is None:
-                if data[j] > pivot:
-                    j -= 1
-                else:
-                    right = data[j]
-                    
-            if left is not None and right is not None:
-                data[i] = right
-                data[j] = left
-                print(data)
-                i = 1
-                j = j = len(data) - 1
-                left = None
-                right = None
-
-            if i >= j:
-                data[0] = right
-                data[j] = pivot
-                print(data)
+            while data[i] <= pivot and i< j:
+                i += 1
+            while data[j] >= pivot and j > 1:
+                j -= 1
+            if i < j:
+                self.swap(data, i, j)
+                print()
+            elif i == j:
+                pass
+            else:
+                self.swap(data, 0, j)
                 break
+        self.quick＿sort(data, 0, j-1)
+        self.quick＿sort(data, j+1, len(data)-1)
+                
+    def swap(self, data: [], i: int, j: int):
+        temp = data[i]
+        data[i] = data[j]
+        data[j] = temp
+        print(data)
         
 l1 = ListNode(3)
 l1.next = ListNode(2)
@@ -64,3 +57,4 @@ l2.next = ListNode(2)
 l2.next.next = ListNode(2)
 s = Solution()
 s.mergeTwoLists(l1, l2)
+print()
