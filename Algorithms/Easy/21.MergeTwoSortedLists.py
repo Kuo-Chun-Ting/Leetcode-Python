@@ -6,32 +6,33 @@ class ListNode:
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         if l1 is not None and l2 is not None:
-            curr_l1 = l1 
             curr_l2 = l2
             last_l2 = None
-            while curr_l1 is not None:
+            while l1 is not None:
                 new_node = None
                 while curr_l2 is not None:
-                    if curr_l1.val <= curr_l2.val:
-                        new_node = ListNode(curr_l1.val)
+                    if l1.val <= curr_l2.val:
+                        new_node = l1
+                        l1 = l1.next # move to next so that l1 can keep the next node
                         new_node.next = curr_l2
-                        if last_l2 is None: 
-                            l2 = new_node
+                        
+                        if last_l2 is not None:
+                            last_l2.next = new_node # case1 for inserting to the middle  
                         else:
-                            last_l2.next = new_node
+                            l2 = new_node # case2 for inserting to the beginning
+                        last_l2 = new_node
                         break
+                    
                     last_l2 = curr_l2
                     curr_l2 = curr_l2.next
                     
-                if new_node is None:
-                    new_node = ListNode(curr_l1.val)
+                if new_node is None: 
+                    new_node = l1 # case3 for inserting to the end
+                    l1 = l1.next 
+                    new_node.next = None
                     last_l2.next = new_node
-                    last_l2 = None
                     curr_l2 = l2
-                else:
-                    last_l2 = new_node
-                    curr_l2 = new_node.next
-                curr_l1 = curr_l1.next
+                    last_l2 = None
             return l2
         elif l1 is None and l2 is None:
             return None
