@@ -1,15 +1,16 @@
 class Solution:
     def removeDuplicates(self, nums) -> int:
-        total = len(nums)
+        l = len(nums)
+        if l == 0:
+            return 0
         i = 0
-        while i < total:
-            num = nums[i]
-            if num in nums[i+1:total]:
-                nums.remove(num)
-                total -= 1
-            else:
+        for j in range(1, l):
+            if nums[i] != nums[j]:
+                temp =nums[i+1]
+                nums[i+1] = nums[j]
+                nums[j] = temp
                 i += 1
-        return len(nums)
+        return i + 1
 s = Solution()
-nums = [1,1,2]
+nums = [0,0,1,1,1,2,2,3,3,4]
 s.removeDuplicates(nums)
