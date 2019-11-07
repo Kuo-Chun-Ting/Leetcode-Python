@@ -5,21 +5,26 @@ class Solution:
         l = len(nums)
         if l == 0:
             return 0
-        index = 0
-        try:
-            index = nums.index(val)
-        except:
-            return l
+        
+        index = -1
         count = 1
-        for i in range(index + 1, l):
-            if nums[i] != val:
-                temp = nums[i]
-                nums[i] = nums[index]
-                nums[index] = temp
-                index += 1
+        
+        for i in range(l):
+            if index >= 0:
+                if nums[i] != val:
+                    temp = nums[i]
+                    nums[i] = nums[index]
+                    nums[index] = temp
+                    index += 1
+                else:
+                    count += 1
             else:
-                count += 1
-        return l - count 
+                if nums[i] == val:
+                    index = i
+        if index >= 0:
+            return l - count 
+        else:
+            return l
                 
 s = Solution()
-s.removeElement([22],3)
+s.removeElement([0,1,2,2,3,0,4,2],2)
