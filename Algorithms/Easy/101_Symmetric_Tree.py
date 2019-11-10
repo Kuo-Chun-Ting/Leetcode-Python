@@ -1,7 +1,7 @@
 from pathlib import Path
 import sys
 sys.path.append(str(Path(__file__).parent.parent.absolute()))
-from Tree.treenode import TreeNode
+from models.tree_node import TreeNode
 
 class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:

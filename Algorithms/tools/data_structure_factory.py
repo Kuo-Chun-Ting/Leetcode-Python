@@ -1,7 +1,7 @@
 from pathlib import Path
 import sys
 sys.path.append(str(Path(__file__).parent.parent.absolute()))
-from models.listnode import ListNode
+from models.list_node import ListNode
 
 class DSFactory:
     def array_to_listnode(self, data: []) -> ListNode:
