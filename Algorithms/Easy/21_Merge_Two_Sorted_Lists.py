@@ -2,7 +2,7 @@ from pathlib import Path
 import sys
 sys.path.append(str(Path(__file__).parent.parent.absolute()))
 print(sys.path)
-from LinkedList.ListNode import ListNode, NodeFactory
+from LinkedList.ListNode import ListNode, array_to_listnode
 
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
@@ -42,8 +42,7 @@ class Solution:
         else:
             return l2
 
-factory = NodeFactory()
-l1 = factory.array_to_nodes([-10,-10,-9,-4,1,6,6])
-l2 = factory.array_to_nodes([-7])
+l1 = array_to_listnode([-10,-10,-9,-4,1,6,6])
+l2 = array_to_listnode([-7])
 s = Solution()
 s.mergeTwoLists(l1, l2)
