@@ -1,9 +1,9 @@
 from pathlib import Path
 import sys
-sys.path.append(str(Path(__file__).parent.absolute()))
-from listnode import ListNode
+sys.path.append(str(Path(__file__).parent.parent.absolute()))
+from models.listnode import ListNode
         
-class LinkedList:
+class LinkedListOperation:
     def __init__(self):
         self.head = None
         
@@ -28,7 +28,7 @@ class LinkedList:
             curr = curr.next
         curr.next = new_node
     
-l = LinkedList()
+l = LinkedListOperation()
 l.insert_at_beginning(99)
 l.insert_at_beginning(30)
 l.insert_at_beginning(19)
