@@ -1,8 +1,8 @@
-# Definition for singly-linked list.
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+from pathlib import Path
+import sys
+sys.path.append(str(Path(__file__).parent.parent.absolute()))
+print(sys.path)
+from LinkedList.ListNode import ListNode
 
 class Solution(object):
     def addTwoNumbers(self, l1:ListNode, l2:ListNode) -> ListNode :
@@ -40,7 +40,6 @@ class Solution(object):
     
     
 l1 = ListNode(1)
-
 l2 = ListNode(9)
 l2.next = ListNode(9)
 

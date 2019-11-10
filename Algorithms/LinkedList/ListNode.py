@@ -4,7 +4,7 @@ class ListNode:
         self.next = None
         
 class NodeFactory:       
-    def create_node(self, data: []) -> ListNode:
+    def array_to_nodes(self, data: []) -> ListNode:
         length = len(data)
         if length == 0:
             return None
@@ -19,4 +19,4 @@ class NodeFactory:
                 curr = curr.next
         return head
 
-node = NodeFactory().create_node([1,2,3])
+node = NodeFactory().array_to_nodes([1,2,3])

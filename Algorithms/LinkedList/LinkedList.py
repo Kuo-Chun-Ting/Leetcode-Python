@@ -1,7 +1,7 @@
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+from pathlib import Path
+import sys
+sys.path.append(str(Path(__file__).parent.absolute()))
+from ListNode import ListNode
         
 class LinkedList:
     def __init__(self):
