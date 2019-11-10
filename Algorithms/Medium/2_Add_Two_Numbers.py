@@ -2,7 +2,7 @@ from pathlib import Path
 import sys
 sys.path.append(str(Path(__file__).parent.parent.absolute()))
 print(sys.path)
-from LinkedList.ListNode import ListNode
+from LinkedList.listnode import ListNode
 
 class Solution(object):
     def addTwoNumbers(self, l1:ListNode, l2:ListNode) -> ListNode :
