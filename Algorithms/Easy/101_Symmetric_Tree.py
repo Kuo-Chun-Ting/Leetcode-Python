@@ -7,6 +7,8 @@ class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:
         print(node.val)
         print('ok')
+    
+
 
 node = TreeNode(1)
 s = Solution()
