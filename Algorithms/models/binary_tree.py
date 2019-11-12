@@ -33,11 +33,3 @@ def arr_to_node(arr, root, i, n):
         root.left = arr_to_node(arr, root.left, 2 * i + 1, n)  
         root.right = arr_to_node(arr, root.right, 2 * i + 2, n) 
     return root 
-
-# arr = [1, 2, 3, 4, 5, 6, 6, 6, 6] 
-# n = len(arr) 
-# root = None
-# root = arr_to_node(arr, root, 0, n) 
-# print('in order')
-# root.in_order()
-# print('level order')
