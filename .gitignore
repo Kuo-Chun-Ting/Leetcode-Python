@@ -130,3 +130,6 @@ dmypy.json
 
 # vscode
 .vscode/
+
+# my test file
+Algorithms/test.py
