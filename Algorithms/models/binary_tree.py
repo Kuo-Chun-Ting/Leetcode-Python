@@ -14,8 +14,10 @@ class TreeNode:
     def level_order(self,root):
         res = []
         self.dfs(root, 0, res)
+        for item in res:
+            print(item)
         return res
-            
+    
     def dfs(self, root, depth, res):
         if root == None:
             return res
@@ -27,18 +29,15 @@ class TreeNode:
         
 def arr_to_node(arr, root, i, n): 
     if i < n: 
-     
         root = TreeNode(arr[i])  
         root.left = arr_to_node(arr, root.left, 2 * i + 1, n)  
         root.right = arr_to_node(arr, root.right, 2 * i + 2, n) 
-        
     return root 
 
 # arr = [1, 2, 3, 4, 5, 6, 6, 6, 6] 
 # n = len(arr) 
 # root = None
-# root = array_to_tree_node(arr, root, 0, n) 
+# root = arr_to_node(arr, root, 0, n) 
 # print('in order')
 # root.in_order()
 # print('level order')
-# root.level_order(root)

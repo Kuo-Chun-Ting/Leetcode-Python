@@ -18,6 +18,6 @@ s = Solution()
 node = None
 arr = [1,2,2,3,4,4,3]
 node = arr_to_node(arr,node, 0, len(arr))
-print(node.level_order(node))
-answer = s.isSymmetric(node)
-print(answer)
+node.level_order(node)
+result = s.isSymmetric(node)
+print(result)
