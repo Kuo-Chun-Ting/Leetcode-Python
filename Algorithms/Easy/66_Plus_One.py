@@ -22,8 +22,10 @@ class Solution:
                 digits[i] = digits[i] + 1
                 carry = 0
                 return digits
+            
         if carry != 0:
             digits.insert(0,1)
+            
         return digits
         
 s = Solution()
