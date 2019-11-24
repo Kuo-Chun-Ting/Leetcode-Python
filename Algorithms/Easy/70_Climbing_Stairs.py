@@ -1,4 +1,6 @@
 class Solution:
+    # by Dynamic Programing
+    # sum solutions from 0 to n
     def climbStairs(self, n: int) -> int:
         solution_table = [1, 2]
         
