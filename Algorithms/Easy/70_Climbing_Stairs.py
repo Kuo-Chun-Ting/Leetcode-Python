@@ -1,11 +1,12 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        solutions = [1, 2]
+        solution_table = [1, 2]
         
         for i in range(2, n):
-            ways = solutions[i-1] + solutions[i-2]
-            solutions.append(ways)
+            solution = solution_table[i-1] + solution_table[i-2]
+            solution_table.append(solution)
             
-        return solutions[n-1]
+        return solution_table[n-1]
+    
 s = Solution()
 print(s.climbStairs(3))
