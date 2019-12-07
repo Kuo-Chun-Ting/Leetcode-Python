@@ -28,10 +28,38 @@ class LinkedListOperation:
             curr = curr.next
         curr.next = new_node
     
-l = LinkedListOperation()
-l.insert_at_beginning(99)
-l.insert_at_beginning(30)
-l.insert_at_beginning(19)
-l.insert_at_end(50)
-l.insert_at_end(28)
-l.travel_node()
+def array_to_list_node(data:[]):
+    if data is None or len(data) == 0:
+        return None
+    
+    node = ListNode(data[0])
+    curr = node    
+    for i in range(1, len(data)):
+        curr.next = ListNode(data[i])
+        curr = curr.next
+    return node
+
+def travel_node(node: ListNode):
+        if node is None:
+            print('node is None')
+        else:
+            curr = node
+            while curr is not None:
+                print(curr.val)
+                curr = curr.next
+        
+    
+    
+# l = LinkedListOperation()
+# l.insert_at_beginning(99)
+# l.insert_at_beginning(30)
+# l.insert_at_beginning(19)
+# l.insert_at_end(50)
+# l.insert_at_end(28)
+# l.travel_node()
+
+node = array_to_list_node([1,2,3])
+node1 = array_to_list_node(None)
+
+travel_node(node)
+travel_node(node1)
