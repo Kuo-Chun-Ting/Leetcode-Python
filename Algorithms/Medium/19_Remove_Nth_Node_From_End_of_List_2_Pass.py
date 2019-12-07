@@ -4,6 +4,9 @@ sys.path.append(str(Path(__file__).parent.parent.absolute()))
 from models.list_node import ListNode
 from tool.linked_list_operation import array_to_list_node, travel_node
 
+# two pass solution
+# one for finding the length of ListNode 
+# another for finding the (length - n + 1)-th node to remove it
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         # count the length of the node
