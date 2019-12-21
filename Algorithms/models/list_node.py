@@ -28,9 +28,3 @@ def arr_to_node(arr:[]) -> ListNode:
         curr = curr.next
     return head
 
-node = arr_to_node([1])
-node.print_all()
-
-node.add(2)
-node.add(3)
-node.print_all()
