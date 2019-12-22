@@ -27,7 +27,8 @@ class TreeNode:
         self.dfs(root.left, depth+1, res)
         self.dfs(root.right, depth+1, res)
         
-
+# i: root index in the arr
+# n: length of the arr
 def arr_to_node(arr, root, i, n): 
     if i < n: 
         root = TreeNode(arr[i])  
