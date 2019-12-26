@@ -29,6 +29,9 @@ class TreeNode:
         
 # i: root index in the arr
 # n: length of the arr
+def arr_to_treenode(arr):
+    return arr_to_node(arr, arr[0], 0, len(arr))
+    
 def arr_to_node(arr, root, i, n): 
     if i < n: 
         root = TreeNode(arr[i])  
