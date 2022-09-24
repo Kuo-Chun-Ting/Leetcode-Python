@@ -1,10 +1,10 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        hash_table = dict()
+        value_to_index_dict = dict()
         for i in range(len(nums)):
-            val = nums[i]
+            value = nums[i]
             complement = target - nums[i]
-            if complement in hash_table:
-                return [i, hash_table[complement]]
-            hash_table[val] = i
+            if complement in value_to_index_dict:
+                return [i, value_to_index_dict[complement]]
+            value_to_index_dict[value] = i
         return []
