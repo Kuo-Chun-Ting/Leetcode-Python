@@ -49,3 +49,31 @@ class HashMapSolution:
                 value_set.add(nums[j])
                 j += 1
         return res
+
+
+class NoSortSolution:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
+        res, dups = set(), set()
+
+        # Instead of re-populating a hashset every time in the inner loop as line 41 above,
+        # we can use a hashmap and populate it once.
+        seen = {}
+
+        for i in range(len(nums)):
+            if nums[i] not in dups:
+                dups.add(nums[i])
+
+                for j in range(i + 1, len(nums)):
+                    complement = -(nums[i] + nums[j])
+                    if complement in seen and seen[complement] == i:
+                        res.add(tuple(sorted([nums[i], nums[j], complement])))
+
+                    # Values in the hashmap will indicate whether we have encountered that element in the current iteration i
+                    seen[nums[j]] = i
+        return res
+
+
+if __name__ == "__main__":
+    input = [-1, 0, 1, 2, -1, -4]
+    res = NoSortSolution().threeSum(input)
+    print(res)
